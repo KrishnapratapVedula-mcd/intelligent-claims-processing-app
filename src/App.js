@@ -6,6 +6,7 @@ import AssessmentAgent from './Pages/AssessmentAgent';
 import RiskAnalysisAgent from './Pages/RiskAnalysisAgent';
 import FraudDetectionAgent from './Pages/FraudDetectionAgent';
 import DecisionAgent from './Pages/DecisionAgent';
+import About from './Pages/About';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         </header>
         <div className="app-body">
           <nav className="sidebar">
+            <NavLink to="/About" className="nav-link" activeClassName="active-link">About</NavLink>
             <NavLink to="/IntakeAgent" className="nav-link" activeClassName="active-link">Intake Agent</NavLink>
             <NavLink to="/AssessmentAgent" className="nav-link" activeClassName="active-link">Assessment Agent</NavLink>
             <NavLink to="/RiskAnalysisAgent" className="nav-link" activeClassName="active-link">Risk Analysis Agent</NavLink>
@@ -24,6 +26,7 @@ function App() {
           </nav>
           <main className="content">
             <Routes>
+              <Route path="/About" element={<About />} />
               <Route path="/IntakeAgent" element={<IntakeAgent />} />
               <Route path="/AssessmentAgent" element={<AssessmentAgent />} />
               <Route path="/RiskAnalysisAgent" element={<RiskAnalysisAgent />} />
