@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-dom';
 import './App.css';
 import IntakeAgent from './Pages/IntakeAgent';
 import AssessmentAgent from './Pages/AssessmentAgent';
@@ -11,21 +11,26 @@ function App() {
   return (
     <Router>
       <div className="app">
-        <div className="sidebar">
-          <Link to="/IntakeAgent"><button>Intake Agent</button></Link>
-          <Link to="/AssessmentAgent"><button>Assessment Agent</button></Link>
-          <Link to="/RiskAnalysisAgent"><button>Risk Analysis Agent</button></Link>
-          <Link to="/FraudDetectionAgent"><button>Fraud Detection Agent</button></Link>
-          <Link to="/DecisionAgent"><button>Decision Agent</button></Link>
-        </div>
-        <div className="content">
-          <Routes>
-            <Route path="/IntakeAgent" element={<IntakeAgent />} />
-            <Route path="/AssessmentAgent" element={<AssessmentAgent />} />
-            <Route path="/RiskAnalysisAgent" element={<RiskAnalysisAgent />} />
-            <Route path="/FraudDetectionAgent" element={<FraudDetectionAgent />} />
-            <Route path="/DecisionAgent" element={<DecisionAgent />} />
-          </Routes>
+        <header className="app-header">
+          <h1>Intelligent Claims Processing</h1>
+        </header>
+        <div className="app-body">
+          <nav className="sidebar">
+            <NavLink to="/IntakeAgent" className="nav-link" activeClassName="active-link">Intake Agent</NavLink>
+            <NavLink to="/AssessmentAgent" className="nav-link" activeClassName="active-link">Assessment Agent</NavLink>
+            <NavLink to="/RiskAnalysisAgent" className="nav-link" activeClassName="active-link">Risk Analysis Agent</NavLink>
+            <NavLink to="/FraudDetectionAgent" className="nav-link" activeClassName="active-link">Fraud Detection Agent</NavLink>
+            <NavLink to="/DecisionAgent" className="nav-link" activeClassName="active-link">Decision Agent</NavLink>
+          </nav>
+          <main className="content">
+            <Routes>
+              <Route path="/IntakeAgent" element={<IntakeAgent />} />
+              <Route path="/AssessmentAgent" element={<AssessmentAgent />} />
+              <Route path="/RiskAnalysisAgent" element={<RiskAnalysisAgent />} />
+              <Route path="/FraudDetectionAgent" element={<FraudDetectionAgent />} />
+              <Route path="/DecisionAgent" element={<DecisionAgent />} />
+            </Routes>
+          </main>
         </div>
       </div>
     </Router>
