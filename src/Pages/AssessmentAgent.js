@@ -80,12 +80,32 @@ const AssessmentAgent = () => {
                 </div>
             )}
             {postResponse && (
-                <div style={{ padding: '10px', border: '1px solid #ccc', borderRadius: '5px', backgroundColor: '#f9f9f9' }}>
-                    <h3 style={{ color: '#333' }}>Assessment AI Agent Result:</h3>
-                    {/* Render postResponse as HTML */}
-                    <div dangerouslySetInnerHTML={{ __html: postResponse }} />
-                </div>
-            )}
+    <div style={{
+        padding: '20px',
+        border: '1px solid #ddd',
+        borderRadius: '8px',
+        backgroundColor: '#ffffff',
+        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+        marginTop: '20px'
+    }}>
+        <h3 style={{
+            color: '#007BFF',
+            fontSize: '1.25rem',
+            marginBottom: '10px',
+            borderBottom: '1px solid #ddd',
+            paddingBottom: '5px'
+        }}>
+            Assessment AI Agent Result
+        </h3>
+        {/* Render postResponse as HTML */}
+        <div style={{
+            color: '#333',
+            fontSize: '1rem',
+            lineHeight: '1.5',
+            wordWrap: 'break-word'
+        }} dangerouslySetInnerHTML={{ __html: postResponse }} />
+    </div>
+)}
         </div>
     );
 };
