@@ -40,7 +40,7 @@ const IntakeAgent = () => {
             <div style={{ marginBottom: '20px' }}>
                 <input
                     type="text"
-                    placeholder="Enter value for POST request"
+                    placeholder="Ask queries like 'What is your role?'"
                     value={postData.key}
                     onChange={handleInputChange}
                     style={{
